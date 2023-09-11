@@ -1,5 +1,7 @@
+import Chart from "../../components/chart/Chart";
 import Navbar from "../../components/navbar/Navbar";
 import Sidebar from "../../components/sidebar/Sidebar";
+import TableList from "../../components/table/TableList";
 import "./single.scss";
 
 const Single = () => {
@@ -14,12 +16,35 @@ const Single = () => {
             <h1 className="title">Information</h1>
             <div className="item">
               <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" className="itemImg" />
-              <div className="details">details</div>
+              <div className="details">
+                <h1 className="itemTitle">John Doe</h1>
+                <div className="detailItem">
+                  <span className="itemKey">Email: </span>
+                  <span className="itemValue">johndoe@gmail.com</span>
+                </div>
+                <div className="detailItem">
+                  <span className="itemKey">Phone: </span>
+                  <span className="itemValue">+234 9063 1994 22</span>
+                </div>
+                <div className="detailItem">
+                  <span className="itemKey">Address: </span>
+                  <span className="itemValue">Federal Lowcost North Bank</span>
+                </div>
+                <div className="detailItem">
+                  <span className="itemKey">Country: </span>
+                  <span className="itemValue">Nigeria</span>
+                </div>
+              </div>
             </div>
           </div>
-          <div className="right"></div>
+          <div className="right">
+            <Chart aspect={3/1} title="Users spending(Last 6 Months)"/>
+          </div>
         </div>
-        <div className="bottom"></div>
+        <div className="bottom">
+        <h1 className="title">Information</h1>
+          <TableList/>
+        </div>
       </div>
     </div>
   );
