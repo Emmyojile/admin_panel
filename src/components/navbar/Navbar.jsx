@@ -1,7 +1,12 @@
 import {ChatBubbleOutlineOutlined, ListOutlined, DarkModeOutlined, FullscreenExitOutlined, LanguageOutlined, ListAltOutlined, NotificationAddOutlined, SearchOutlined } from "@mui/icons-material";
 import "./navbar.scss";
+import { DarkModeContext } from "../../context/darkModeContext";
+import { useContext } from "react";
 
 const Navbar = () => {
+
+  const {dispatch} = useContext(DarkModeContext);
+
   return (
     <div className="navbar">
       <div className="wrapper">
@@ -15,7 +20,7 @@ const Navbar = () => {
             English
           </div>
           <div className="item">
-            <DarkModeOutlined className="icon"/>
+            <DarkModeOutlined className="icon" onClick={()=> dispatch({type: "TOGGLE"})}/>
           </div>
           <div className="item">
             <FullscreenExitOutlined className="icon"/>
